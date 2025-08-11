@@ -3,7 +3,7 @@
 ***************************************************
 
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 
@@ -54,7 +54,7 @@ gen epsilon = y - p_
 gen w = 1/(p_ * (1-p_))
 
 *8) Set Environment
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Diagnostics"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Diagnostics"
 
 ***************************************************
 *Linear Diagnostics
@@ -88,7 +88,7 @@ estat vif
 *Final WLS Regressions
 ***************************************************
 
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Implied Probabilities"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Implied Probabilities"
 
 *1) Pooled Regression
 regress epsilon home away p_ season_18_19-season_24_25 div_E0 div_I1 div_SP1 [aweight=w],vce(cluster match_id)
