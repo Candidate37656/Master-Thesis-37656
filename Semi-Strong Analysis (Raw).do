@@ -3,7 +3,7 @@
 ***************************************************
 
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 
@@ -54,7 +54,7 @@ gen epsilon = y - p_
 gen w = 1/(p_ * (1-p_))
 
 *8) Set Environment
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Diagnostics"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Diagnostics"
 
 ***************************************************
 *Covid-19 Analysis
