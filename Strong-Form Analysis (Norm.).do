@@ -3,7 +3,7 @@
 ***************************************************
 
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 
@@ -60,7 +60,7 @@ gen epsilon = y - norm_
 gen w = 1/(norm_ * (1-norm_))
 
 *8) Set Environment
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Normalised Probabilities"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Normalised Probabilities"
 
 ***************************************************
 *Linear Diagnostics
@@ -94,7 +94,7 @@ estat vif
 *Final WLS Regressions
 ***************************************************
 
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Implied Probabilities"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Implied Probabilities"
 
 *1) Pooled Regression
 regress epsilon home away norm_ season_18_19-season_24_25 div_E0 div_I1 div_SP1 [aweight=w], cluster(match_id)
