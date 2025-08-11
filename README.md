@@ -1,2 +1,6 @@
 # Master-Thesis-37656
-Stata Do files for betting market analysis (data not included; for code viewing only).
+This repository contains the final Do files from my analyses of betting markets. Please note that data is not included; this repository is intended solely for viewing the code.
+
+# Files
+Draw Analysis
+
