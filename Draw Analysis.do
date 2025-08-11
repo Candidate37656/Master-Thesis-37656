@@ -2,7 +2,7 @@
 *Draw Analysis (Raw Probabilities)
 ***************************************************
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 
 
 *Development of Variables
@@ -29,7 +29,7 @@ replace y_draw = 1 if ftr == "D"
 gen double weight_draw = 1/(p_draw_avg*(1-p_draw_avg))
 
 *5) Set folder
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Draw_Analysis"
+cd "/Users/User/Desktop/Masterarbeit/Results/Draw_Analysis"
 
 ***************************************************
 *Linear Diagnostics
