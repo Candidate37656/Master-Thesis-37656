@@ -3,7 +3,7 @@
 ***************************************************
 
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 
@@ -59,16 +59,16 @@ gen y = (ftr == "H" & side == "home") | (ftr == "D" & side == "draw") | (ftr == 
 gen epsilon = y - norm_
 gen w = 1/(norm_ * (1-norm_))
 
-save "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", replace
+save "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", replace
 
 ***************************************************
 *Efficiency Curves for Bundesliga
 ***************************************************
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Weak-Form Efficience/Bundesliga"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Weak-Form Efficience/Bundesliga"
 
 
 *1) Home Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_D1==1
 
 regress epsilon norm_ [aweight=w] if home==1, cluster(match_id)
@@ -85,7 +85,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Bundesliga_Home_Curve.png", replace
 
 *2) Away Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_D1==1
 
 regress epsilon norm_ [aweight=w] if away==1, cluster(match_id)
@@ -102,7 +102,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Bundesliga_Away_Curve.png", replace
 
 *3) Draw Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_D1==1
 
 regress epsilon norm_ [aweight=w] if home==0 & away==0, cluster(match_id)
@@ -121,11 +121,11 @@ graph export "Bundesliga_Draw_Curve.png", replace
 ***************************************************
 *Efficiency Curves for Premier League
 ***************************************************
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Weak-Form Efficience/Premier League"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Weak-Form Efficience/Premier League"
 
 
 *1) Home Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_E0==1
 
 regress epsilon norm_ [aweight=w] if home==1, cluster(match_id)
@@ -142,7 +142,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Home_Curve.png", replace
 
 *2) Away Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_E0==1
 
 regress epsilon norm_ [aweight=w] if away==1, cluster(match_id)
@@ -159,7 +159,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Away_Curve.png", replace
 
 *3) Draw Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_E0==1
 
 regress epsilon norm_ [aweight=w] if home==0 & away==0, cluster(match_id)
@@ -178,11 +178,11 @@ graph export "Draw_Curve.png", replace
 ***************************************************
 *Efficiency Curves for La Liga
 ***************************************************
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Weak-Form Efficience/La Liga"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Weak-Form Efficience/La Liga"
 
 
 *1) Home Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_SP1==1
 
 regress epsilon norm_ [aweight=w] if home==1, cluster(match_id)
@@ -199,7 +199,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Home_Curve.png", replace
 
 *2) Away Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_SP1==1
 
 regress epsilon norm_ [aweight=w] if away==1, cluster(match_id)
@@ -216,7 +216,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Away_Curve.png", replace
 
 *3) Draw Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_SP1==1
 
 regress epsilon norm_ [aweight=w] if home==0 & away==0, cluster(match_id)
@@ -235,11 +235,11 @@ graph export "Draw_Curve.png", replace
 ***************************************************
 *Efficiency Curves for Serie A
 ***************************************************
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Weak-Form Efficience/Serie A"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Weak-Form Efficience/Serie A"
 
 
 *1) Home Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1
 
 regress epsilon norm_ [aweight=w] if home==1, cluster(match_id)
@@ -256,7 +256,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Home_Curve.png", replace
 
 *2) Away Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1
 
 regress epsilon norm_ [aweight=w] if away==1, cluster(match_id)
@@ -273,7 +273,7 @@ yline(0, lpattern(dash) lcolor(black) lwidth(thick))
 graph export "Away_Curve.png", replace
 
 *3) Draw Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1
 
 regress epsilon norm_ [aweight=w] if home==0 & away==0, cluster(match_id)
@@ -292,7 +292,7 @@ graph export "Draw_Curve.png", replace
 ***************************************************
 *Profitability: Strategy Analysis Serie A
 ***************************************************
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1
 
 *Break Even Points Efficiency Curves
@@ -342,7 +342,7 @@ restore
 ***************************************************
 *Serie A: In Sample Profit Simulation (ex-post) 2017/18 - 2024/25
 ***************************************************
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1
 gen stake = 1
 
@@ -418,8 +418,8 @@ di as txt "% correct Bets: " `pct_corr' "%"
 
 *1) Determination of Profitability Thresholds (Seasons 17/18-20/21)
 
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Weak-Form Efficience/Serie A"
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Weak-Form Efficience/Serie A"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1 & (season_17_18==1 | season_18_19==1 | season_19_20==1 | season_20_21==1)
 
 *1.1) Home Win Bets
@@ -452,7 +452,7 @@ di as txt "Serie A (Home): p= " r(min)
 
 
 *1.2) Away Win Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1 & (season_17_18==1 | season_18_19==1 | season_19_20==1 | season_20_21==1)
 
 regress epsilon norm_ [aweight=w] if away==1, cluster(match_id)
@@ -485,7 +485,7 @@ di as txt "Serie A (Away): p= " r(min)
 
 
 *1.3) Draw Bets
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1 & (season_17_18==1 | season_18_19==1 | season_19_20==1 | season_20_21==1)
 
 regress epsilon norm_ [aweight=w] if home==0 & away==0, cluster(match_id)
@@ -520,8 +520,8 @@ restore
 
 *2) Bet Simulations for Seasons 2021 - 2024/25
 
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Weak-Form Efficience/Serie A"
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Weak-Form Efficience/Serie A"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Weak-form-efficiency.dta", clear
 keep if div_I1==1 & (season_21_22==1 | season_22_23==1 | season_23_24==1 | season_24_25==1)
 gen stake = 1
 
