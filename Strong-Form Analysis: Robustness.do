@@ -1,13 +1,13 @@
 ***************************************************
 *Strong-Form Efficiency: Robustness Analyses
 ***************************************************
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Robustness Checks"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Robustness Checks"
 ***************************************************
 *Maximum Odds (Raw Probabilities)
 ***************************************************
 
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 
@@ -123,7 +123,7 @@ test season_18_19 season_19_20 season_20_21 season_21_22 season_22_23 season_23_
 
 
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 
@@ -244,7 +244,7 @@ test season_18_19 season_19_20 season_20_21 season_21_22 season_22_23 season_23_
 *Closing Odds (Raw Probabilities) (2019/20-2024/25)
 ***************************************************
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 *Development of Variables
@@ -296,7 +296,7 @@ gen epsilon = y - p_
 gen w = 1/(p_ * (1-p_))
 
 *7) Set Environment
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Diagnostics"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Diagnostics"
 
 ***************************************************
 *Linear Diagnostics
@@ -330,7 +330,7 @@ estat vif
 *Final WLS Regressions
 ***************************************************
 
-cd "/Users/tillstange/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Implied Probabilities"
+cd "/Users/placeholder/Desktop/Masterarbeit/Results/Main_Analysis (with intercept)/Implied Probabilities"
 
 *1) Pooled Regression
 regress epsilon home away p_ season_20_21-season_24_25 div_E0 div_I1 div_SP1 [aweight=w],vce(cluster match_id)
@@ -365,7 +365,7 @@ test season_20_21 season_21_22 season_22_23 season_23_24 season_24_25
 *Closing Odds (Normalised Probabilities) (2020/21-2024/25)
 ***************************************************
 clear all
-use "/Users/tillstange/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
+use "/Users/placeholder/Desktop/Masterarbeit/Data European football bets/Data-Results/Big_Four_2017-2025_Drop.dta"
 gen long match_id = _n
 
 *Development of Variables
