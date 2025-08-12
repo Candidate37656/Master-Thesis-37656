@@ -107,7 +107,7 @@ outreg2 using "WLS_final_leagues.doc", append ctitle("Premier League")
 test home away p_
 test season_18_19 season_19_20 season_20_21 season_21_22 season_22_23 season_23_24 season_24_25
 
-regress epsilon home away p_ season_18_19-season_24_25 if div_SP==1 [aweight=w], cluster(match_id) 
+regress epsilon home away p_ season_18_19-season_24_25 if div_SP1==1 [aweight=w], cluster(match_id) 
 outreg2 using "WLS_final_leagues.doc", append ctitle("La Liga")
 test home away p_
 test season_18_19 season_19_20 season_20_21 season_21_22 season_22_23 season_23_24 season_24_25
@@ -229,7 +229,7 @@ outreg2 using "WLS_final_leagues.doc", append ctitle("Premier League")
 test home away norm_
 test season_18_19 season_19_20 season_20_21 season_21_22 season_22_23 season_23_24 season_24_25
 
-regress epsilon home away norm_ season_18_19-season_24_25 if div_SP==1 [aweight=w], cluster(match_id) 
+regress epsilon home away norm_ season_18_19-season_24_25 if div_SP1==1 [aweight=w], cluster(match_id) 
 outreg2 using "WLS_final_leagues.doc", append ctitle("La Liga")
 test home away norm_
 test season_18_19 season_19_20 season_20_21 season_21_22 season_22_23 season_23_24 season_24_25
